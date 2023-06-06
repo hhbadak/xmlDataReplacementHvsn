@@ -1,0 +1,10 @@
+C:\Users\HsnHs\source\repos\xmlDataReplacementHVSN\xmlDataReplacementHVSN\obj\Debug\xmlDataReplacementHVSN.csproj.AssemblyReference.cache
+C:\Users\HsnHs\source\repos\xmlDataReplacementHVSN\xmlDataReplacementHVSN\obj\Debug\xmlDataReplacementHVSN.csproj.SuggestedBindingRedirects.cache
+C:\Users\HsnHs\source\repos\xmlDataReplacementHVSN\xmlDataReplacementHVSN\obj\Debug\xmlDataReplacementHVSN.Properties.Resources.resources
+C:\Users\HsnHs\source\repos\xmlDataReplacementHVSN\xmlDataReplacementHVSN\obj\Debug\xmlDataReplacementHVSN.csproj.GenerateResource.cache
+C:\Users\HsnHs\source\repos\xmlDataReplacementHVSN\xmlDataReplacementHVSN\obj\Debug\xmlDataReplacementHVSN.csproj.CoreCompileInputs.cache
+C:\Users\HsnHs\source\repos\xmlDataReplacementHVSN\xmlDataReplacementHVSN\bin\Debug\xmlDataReplacementHVSN.exe.config
+C:\Users\HsnHs\source\repos\xmlDataReplacementHVSN\xmlDataReplacementHVSN\bin\Debug\xmlDataReplacementHVSN.exe
+C:\Users\HsnHs\source\repos\xmlDataReplacementHVSN\xmlDataReplacementHVSN\bin\Debug\xmlDataReplacementHVSN.pdb
+C:\Users\HsnHs\source\repos\xmlDataReplacementHVSN\xmlDataReplacementHVSN\obj\Debug\xmlDataReplacementHVSN.exe
+C:\Users\HsnHs\source\repos\xmlDataReplacementHVSN\xmlDataReplacementHVSN\obj\Debug\xmlDataReplacementHVSN.pdb
