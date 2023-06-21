@@ -42,7 +42,7 @@ namespace xmlDataReplacementHVSN
             InitializeComponent();
 
             timer = new Timer();
-            timer.Interval = 45 * 60 * 1000;
+            timer.Interval = 39 * 60 * 1000;
             timer.Tick += Timer_Tick;
 
             timer.Start();
@@ -97,7 +97,17 @@ namespace xmlDataReplacementHVSN
                 // FTP Klasörüne yükleme işlemi
 
                 #region FTP
-               
+
+                //using (WebClient ftpClient = new WebClient())
+                //{
+                //    ftpClient.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
+
+                //    ftpClient.UploadFile(ftpUrl + mvsnXmlPathVaryasyonsuzKarg10, WebRequestMethods.Ftp.UploadFile, mvsnXmlPathVaryasyonsuzKarg10);
+                //    ftpClient.UploadFile(ftpUrl + mvsnXmlPathVaryasyonluKarg10, WebRequestMethods.Ftp.UploadFile, mvsnXmlPathVaryasyonluKarg10);
+                //    ftpClient.UploadFile(ftpUrl + xmlCekPath, WebRequestMethods.Ftp.UploadFile, xmlCekPath);
+                //    ftpClient.UploadFile(ftpUrl + teknoTokPath, WebRequestMethods.Ftp.UploadFile, teknoTokPath);
+                //    ftpClient.UploadFile(ftpUrl + xmlTedarikPath, WebRequestMethods.Ftp.UploadFile, xmlTedarikPath);
+                //}
                 using (var client = new WebClient())
                 {
                     client.Credentials = new NetworkCredential(ftpUsername, ftpPassword);
@@ -169,8 +179,8 @@ namespace xmlDataReplacementHVSN
 
             foreach (XElement product in root.Elements())
             {
-                product.Element("barcode").Value = $"MVSN- {product.Element("Barcode").Value}";
                 product.Element("Marka").Value = $"MVSN- {product.Element("Marka").Value}";
+                product.Element("Urun_Kodu").Value = $"MVSN- {product.Element("Urun_Kodu").Value}";
             }
 
             doc.Save(savepath);
@@ -180,10 +190,10 @@ namespace xmlDataReplacementHVSN
             var doc = XDocument.Load(url);
             XElement root = doc.Root;
 
-            foreach (XElement product in root.Elements())
+            foreach (XElement post in root.Elements())
             {
-                product.Element("Sku").Value = $"MVSN- {product.Element("Sku").Value}";
-                product.Element("Markalar").Value = $"MVSN- {product.Element("Markalar").Value}";
+                post.Element("Sku").Value = $"MVSN- {post.Element("Sku").Value}";
+                post.Element("Markalar").Value = $"MVSN- {post.Element("Markalar").Value}";
             }
             doc.Save(savepath);
         }
@@ -196,6 +206,10 @@ namespace xmlDataReplacementHVSN
             {
                 product.Element("barcode").Value = $"MVSN- {product.Element("barcode").Value}";
                 product.Element("brand").Value = $"MVSN- {product.Element("brand").Value}";
+                foreach (XElement variant in product.Elements("variants").Elements())
+                {
+                    variant.Element("barcode").Value = "MVSN-" + variant.Element("barcode").Value;
+                }
             }
             doc.Save(savepath);
         }
